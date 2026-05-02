@@ -1,0 +1,77 @@
+{
+  "id": "on_this_day",
+  "name": "On This Day",
+  "version": "0.1.0",
+  "description": "Display a notable historical event that happened on today's date.",
+  "author": "FiestaBoard Team",
+  "icon": "history",
+  "category": "utility",
+  "repository": "https://github.com/Fiestaboard/fiestaboard-plugin--on-this-day",
+  "documentation": "README.md",
+  "min_refresh_seconds": 3600,
+  "settings_schema": {
+    "type": "object",
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "title": "Enabled",
+        "default": false
+      },
+      "event_index": {
+        "type": "integer",
+        "title": "Event Position",
+        "description": "Which event to display (1 = most notable).",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 10
+      },
+      "refresh_seconds": {
+        "type": "integer",
+        "title": "Refresh Interval (seconds)",
+        "description": "How often to refresh (once per day is sufficient).",
+        "default": 3600,
+        "minimum": 3600
+      }
+    },
+    "required": []
+  },
+  "variables": {
+    "groups": {
+      "event": {
+        "label": "Historical Event"
+      }
+    },
+    "simple": {
+      "year": {
+        "description": "Year the event occurred",
+        "type": "string",
+        "max_length": 6,
+        "group": "event",
+        "example": "1969"
+      },
+      "text": {
+        "description": "Short description of the event",
+        "type": "string",
+        "max_length": 22,
+        "group": "event",
+        "example": "Moon landing"
+      },
+      "date": {
+        "description": "Today's date (Month Day)",
+        "type": "string",
+        "max_length": 12,
+        "group": "event",
+        "example": "May 1"
+      }
+    }
+  },
+  "screenshots": [
+    {
+      "src": "docs/board-display.png",
+      "alt": "On This Day displayed on a Vestaboard",
+      "caption": "Example board output using the default template",
+      "primary": true
+    }
+  ],
+  "api_docs": "https://api.wikimedia.org/wiki/Feed_API/Reference/On_this_day"
+}
