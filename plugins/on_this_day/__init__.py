@@ -49,7 +49,7 @@ class OnThisDayPlugin(PluginBase):
                 event_index = 0
             event = events[event_index]
             year = str(event.get("year", ""))
-            text = str(event.get("text", ""))[:22]
+            text = str(event.get("text", ""))
             date_str = today.strftime("%B %-d")
 
             return PluginResult(
