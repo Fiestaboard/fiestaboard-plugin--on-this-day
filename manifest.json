@@ -1,7 +1,7 @@
 {
   "id": "on_this_day",
   "name": "On This Day",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Display a notable historical event that happened on today's date.",
   "author": "FiestaBoard Team",
   "icon": "history",
@@ -75,46 +75,69 @@
   ],
   "api_docs": "https://api.wikimedia.org/wiki/Feed_API/Reference/On_this_day",
   "demo": {
-    "name": "On This Day Demo",
-    "device_type": "flagship",
-    "config": {
-      "enabled": true,
-      "event_index": 1,
-      "refresh_seconds": 3600
+    "flagship": {
+      "name": "On This Day Demo",
+      "config": {
+        "enabled": true,
+        "event_index": 1,
+        "refresh_seconds": 3600
+      },
+      "template": [
+        "On This Day",
+        "{{on_this_day.date}}, {{on_this_day.year}}",
+        "",
+        "{{on_this_day.text}}",
+        "",
+        ""
+      ],
+      "line_metadata": [
+        {
+          "alignment": "center",
+          "wrap": false
+        },
+        {
+          "alignment": "center",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": true
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        }
+      ]
     },
-    "template": [
-      "On This Day",
-      "{{on_this_day.date}}, {{on_this_day.year}}",
-      "",
-      "{{on_this_day.text}}",
-      "",
-      ""
-    ],
-    "line_metadata": [
-      {
-        "alignment": "center",
-        "wrap": false
-      },
-      {
-        "alignment": "center",
-        "wrap": false
-      },
-      {
-        "alignment": "left",
-        "wrap": false
-      },
-      {
-        "alignment": "left",
-        "wrap": true
-      },
-      {
-        "alignment": "left",
-        "wrap": false
-      },
-      {
-        "alignment": "left",
-        "wrap": false
-      }
-    ]
+    "note": {
+      "name": "On This Day (Note)",
+      "template": [
+        "ON THIS DAY",
+        "{{on_this_day.year}}",
+        "{{on_this_day.text}}"
+      ],
+      "line_metadata": [
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": true
+        }
+      ]
+    }
   }
 }
